@@ -5,6 +5,8 @@ using Microsoft.EntityFrameworkCore;
 using WebPeliculas.Controllers.DTOs;
 using WebPeliculas.Controllers.Entidades;
 using WebPeliculas.Servicios;
+using Microsoft.AspNetCore.JsonPatch;
+using WebPeliculas.Helpers;
 
 namespace WebPeliculas.Controllers
 {
@@ -25,11 +27,18 @@ namespace WebPeliculas.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ActorDTO>>> Get()
+        public async Task<ActionResult<List<ActorDTO>>> Get([FromQuery] PaginacionDTO paginacionDTO )
         {
             try
             {
-                var entidades = await context.Actores.ToListAsync();
+                var queryable = context.Actores.AsQueryable();
+                
+                await HttpContext.InsertarParametrosPaginacion(queryable, paginacionDTO.CantidadRegistrosPorPagina);
+
+                // Hasta este momento hemos agregado la cantidad de paginas a la cabecera del Http
+                // Hay que agregarla a nivel de EntityFramework
+
+                var entidades = await queryable.Paginar(paginacionDTO).ToListAsync();
                 return mapper.Map<List<ActorDTO>>(entidades);
             }
             catch (Exception ex)
@@ -39,7 +48,7 @@ namespace WebPeliculas.Controllers
         }
 
         [HttpGet("{id:int}", Name = "obtenerActor")]
-        public async Task<ActionResult<AutorDTO>> Get(int id)
+        public async Task<ActionResult<ActorDTO>> Get(int id)
         {
             var existeDato = await context.Actores.FirstOrDefaultAsync(x => x.Id == id);
 
@@ -48,7 +57,7 @@ namespace WebPeliculas.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest);
             }
 
-            var dto = mapper.Map<AutorDTO>(existeDato);
+            var dto = mapper.Map<ActorDTO>(existeDato);
 
             return Ok(dto);
         }
@@ -121,6 +130,37 @@ namespace WebPeliculas.Controllers
                 return NotFound();
             }
 
+        }
+
+        [HttpPatch("{id}")]
+        public async Task<ActionResult> Patch(int id , [FromBody] JsonPatchDocument<ActorPatchDTO> patchDocument)
+        {
+            if (patchDocument == null)
+            {
+                return BadRequest();
+            }
+
+            var entidadDB = await context.Actores.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (entidadDB == null)
+            {
+                return NotFound();
+            }
+
+            var entidadDTO = mapper.Map<ActorPatchDTO>(entidadDB);
+            patchDocument.ApplyTo(entidadDTO, ModelState);
+
+            var esValido = TryValidateModel(entidadDTO);
+
+            if (!esValido)
+            {
+                return BadRequest(ModelState);
+            }
+
+            mapper.Map(entidadDTO, entidadDB);
+            await context.SaveChangesAsync();
+
+            return NoContent();
         }
 
         [HttpDelete("{id}")]

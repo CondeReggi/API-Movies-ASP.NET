@@ -65,3 +65,8 @@ C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Azure.St
 C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Azure.Storage.Common.dll
 C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll

@@ -21,16 +21,16 @@ namespace WebPeliculas.Controllers
         }
 
         [HttpGet]   
-        public async Task<ActionResult<List<AutorDTO>>> Get()
+        public async Task<ActionResult<List<GeneroDTO>>> Get()
         {
             //return await context.Generos.ToListAsync();
             var entidades = await context.Generos.ToListAsync(); // Capturo normalmente los datos
-            var dtos = mapper.Map<List<AutorDTO>>( entidades ); // Los mapeo a GenerosDTO todas las entidades (es decir los reales)
+            var dtos = mapper.Map<List<GeneroDTO>>( entidades ); // Los mapeo a GenerosDTO todas las entidades (es decir los reales)
             return dtos; // Devuelvo los DTO
         }
 
         [HttpGet("{id:int}", Name = "obtenerGenero")]
-        public async Task<ActionResult<AutorDTO>> Get(int id)
+        public async Task<ActionResult<GeneroDTO>> Get(int id)
         {
             var existeDato = await context.Generos.FirstOrDefaultAsync( x => x.Id == id );
 
@@ -39,7 +39,7 @@ namespace WebPeliculas.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest);
             }
 
-            var dto = mapper.Map<AutorDTO>(existeDato);
+            var dto = mapper.Map<GeneroDTO>(existeDato);
 
             return Ok(dto);
         }
@@ -53,7 +53,7 @@ namespace WebPeliculas.Controllers
                 context.Add(entidad);
 
                 await context.SaveChangesAsync();
-                var generoDTO = mapper.Map<AutorDTO>(entidad);
+                var generoDTO = mapper.Map<GeneroDTO>(entidad);
 
                 return new CreatedAtRouteResult("obtenerGenero", new { id = generoDTO.Id }, generoDTO);
             }

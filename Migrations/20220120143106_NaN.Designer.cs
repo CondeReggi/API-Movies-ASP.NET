@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebPeliculas;
 
@@ -11,9 +12,10 @@ using WebPeliculas;
 namespace WebPeliculas.Migrations
 {
     [DbContext(typeof(AplicationDbContext))]
-    partial class AplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220120143106_NaN")]
+    partial class NaN
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -43,7 +45,7 @@ namespace WebPeliculas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Actores", (string)null);
+                    b.ToTable("Actores");
                 });
 
             modelBuilder.Entity("WebPeliculas.Controllers.Entidades.Pelicula", b =>
@@ -70,7 +72,7 @@ namespace WebPeliculas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Peliculas", (string)null);
+                    b.ToTable("Peliculas");
                 });
 
             modelBuilder.Entity("WebPeliculas.Controllers.Entidades.PeliculasActores", b =>
@@ -91,7 +93,7 @@ namespace WebPeliculas.Migrations
 
                     b.HasIndex("PeliculaId");
 
-                    b.ToTable("PeliculasActores", (string)null);
+                    b.ToTable("PeliculasActores");
                 });
 
             modelBuilder.Entity("WebPeliculas.Controllers.Entidades.PeliculasGeneros", b =>
@@ -106,7 +108,7 @@ namespace WebPeliculas.Migrations
 
                     b.HasIndex("PeliculaId");
 
-                    b.ToTable("PeliculasGeneros", (string)null);
+                    b.ToTable("PeliculasGeneros");
                 });
 
             modelBuilder.Entity("WebPeliculas.Entidades.Genero", b =>
@@ -124,7 +126,7 @@ namespace WebPeliculas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Generos", (string)null);
+                    b.ToTable("Generos");
                 });
 
             modelBuilder.Entity("WebPeliculas.Controllers.Entidades.PeliculasActores", b =>

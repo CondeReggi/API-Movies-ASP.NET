@@ -26,6 +26,10 @@ namespace WebPeliculas
             services.AddAutoMapper(typeof(Startup)); //En este proyecto quedan encapsuladas las operadores del automapper
 
             services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosAzure>();
+
+            services.AddControllers() // Configuramos el uso de NewtonSoftJson
+                .AddNewtonsoftJson();
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

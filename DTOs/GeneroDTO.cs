@@ -2,7 +2,7 @@
 
 namespace WebPeliculas.Controllers.DTOs
 {
-    public class AutorDTO
+    public class GeneroDTO
     {
         public int Id { get; set; }
         [Required]
