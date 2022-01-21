@@ -70,3 +70,7 @@ C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Microsof
 C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
 C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\NetTopologySuite.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\lconde\source\repos\WebPeliculas\WebPeliculas\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs

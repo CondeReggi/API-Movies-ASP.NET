@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bAcZysPtH7Yi42snkiehoytpm8sya5W0+Hac/yun9ABV2cUFy85X5QCYLU6VogtVAZbem6DkHlsw5LUF1i6Ecw==",
+  "dgSpecHash": "m4H/dx38rTGT7OvEg4h4Z5nGZPfKiKinUr+MejfiPsxUuqKeMzqIgQ8BrqvwQhgYDKGzm37N3iks2+c3ABkNlw==",
   "success": true,
   "projectFilePath": "C:\\Users\\lconde\\source\\repos\\WebPeliculas\\WebPeliculas\\WebPeliculas.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.1\\microsoft.entityframeworkcore.design.6.0.1.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.1\\microsoft.entityframeworkcore.relational.6.0.1.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.1\\microsoft.entityframeworkcore.sqlserver.6.0.1.nupkg.sha512",
+    "C:\\Users\\lconde\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver.nettopologysuite\\6.0.1\\microsoft.entityframeworkcore.sqlserver.nettopologysuite.6.0.1.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.1\\microsoft.entityframeworkcore.tools.6.0.1.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
@@ -43,6 +44,8 @@
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\lconde\\.nuget\\packages\\nettopologysuite\\2.3.0\\nettopologysuite.2.3.0.nupkg.sha512",
+    "C:\\Users\\lconde\\.nuget\\packages\\nettopologysuite.io.sqlserverbytes\\2.0.0\\nettopologysuite.io.sqlserverbytes.2.0.0.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\newtonsoft.json.bson\\1.0.2\\newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "C:\\Users\\lconde\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",

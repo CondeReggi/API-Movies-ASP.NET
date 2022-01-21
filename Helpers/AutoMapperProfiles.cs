@@ -3,6 +3,8 @@ using WebPeliculas.Controllers.Entidades;
 using WebPeliculas.DTOs;
 using WebPeliculas.Entidades;
 using AutoMapper;
+using NetTopologySuite;
+using NetTopologySuite.Geometries;
 
 namespace WebPeliculas.Helpers
 {
@@ -12,6 +14,20 @@ namespace WebPeliculas.Helpers
         {
             CreateMap<Genero, GeneroDTO>().ReverseMap();
             CreateMap<GeneroCreacionDTO, Genero>();
+
+            var geometryFactory = NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326);
+
+            CreateMap<SalaDeCine, SalaDeCineDTO>()
+                .ForMember(x => x.latitud , x=> x.MapFrom(y => y.Ubicacion.Y))
+                .ForMember(x => x.longitud, x => x.MapFrom(y => y.Ubicacion.X));
+
+
+            CreateMap<SalaDeCineDTO, SalaDeCine>();
+
+            CreateMap<SalaDeCineCreacionDTO, SalaDeCine>()
+                .ForMember(x => x.Ubicacion, x => x.MapFrom(y =>
+                geometryFactory.CreatePoint(new Coordinate(y.longitud, y.latitud))));
+
             CreateMap<Actor, ActorDTO>().ReverseMap();
             CreateMap<ActorCreacionDTO, Actor>()
                 .ForMember(x => x.Foto, options => options.Ignore());
@@ -27,6 +43,8 @@ namespace WebPeliculas.Helpers
             CreateMap<Pelicula, PeliculaDetallesDTO>()
                 .ForMember(x => x.Generos , options => options.MapFrom(MapPeliculasGeneros))
                 .ForMember(x => x.Actores, options => options.MapFrom(MapPeliculasActores));   
+
+
 
         }
         private List<ActorPeliculaDetalleDTO> MapPeliculasActores( Pelicula pelicula, PeliculaDetallesDTO peliculaDetallesDTO)
